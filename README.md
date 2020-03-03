@@ -53,7 +53,7 @@ The Tinier Screen Library relies upon the **[Graphics Buffer Library](https://gi
 
 * **void setFont(void)**
 * **uint8_t getFontHeight(void)**
-* **uint8_t getPrintWidth(char \*)*
+* **uint8_t getPrintWidth(char \*)**
 * **void setCursor(uint8_t, uint8_t)**
 * **void fontColor(uint16_t, uint16_t)**
 * **virtual size_t write(uint8_t)**
