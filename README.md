@@ -32,16 +32,15 @@ The Tinier Screen Library relies upon the **[Graphics Buffer Library](https://gi
 * **void drawRect(uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t)**
 * **void drawRect(uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint16_t)**
 * **void clearWindow(uint8_t, uint8_t, uint8_t, uint8_t)**
+* **void clearScreen(void)**
 
 ### Basic Graphic Commands
 
-* **void drawPixel(uint8_t, uint8_t, uint16_t)**
-* **void drawLine(uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t)**
-* **void drawLine(uint8_t, uint8_t, uint8_t, uint8_t, uint16_t)**
-* **void drawRect(uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t)**
-* **void drawRect(uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint16_t)**
-* **void clearWindow(uint8_t, uint8_t, uint8_t, uint8_t)**
-* **void clearScreen(void)**
+* **void writePixel(uint16_t)**
+* **void writeBuffer(const uint8_t \*, int)**
+* **void setX(uint8_t, uint8_t)**
+* **void setY(uint8_t, uint8_t)**
+* **void goTo(uint8_t x, uint8_t y)**
 
 ### I2C / GPIO
 
