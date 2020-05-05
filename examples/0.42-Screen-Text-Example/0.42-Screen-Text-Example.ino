@@ -4,13 +4,13 @@
 #include <TinierScreen.h>
 #include <GraphicsBuffer.h>
 
-//TinierScreen display = TinierScreen(TinierScreen042);
+TinierScreen display = TinierScreen(TinierScreen042);
 //TinierScreen display = TinierScreen(TinierScreen069);
-TinierScreen display = TinierScreen(TinierScreen096);
+//TinierScreen display = TinierScreen(TinierScreen096);
 
-//GraphicsBuffer screenBuffer = GraphicsBuffer(72, 40, colorDepth1BPP);
+GraphicsBuffer screenBuffer = GraphicsBuffer(72, 40, colorDepth1BPP);
 //GraphicsBuffer screenBuffer = GraphicsBuffer(96, 16, colorDepth1BPP);
-GraphicsBuffer screenBuffer = GraphicsBuffer(128, 64, colorDepth1BPP);
+//GraphicsBuffer screenBuffer = GraphicsBuffer(128, 64, colorDepth1BPP);
 
 int displayPort = 0;
 int resetPin = A0+displayPort;
