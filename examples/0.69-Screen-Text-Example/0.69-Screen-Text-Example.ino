@@ -29,7 +29,7 @@ void setup() {
 int increment = 0;
 int xMax, yMax, x, y;
 void loop() {
-  xMax = screenBuffer.width + 20 - screenBuffer.getPrintWidth("Text Test!");
+  xMax = screenBuffer.width + 20 - screenBuffer.getPrintWidth("0.69 Test!");
   yMax = screenBuffer.height + 8 - screenBuffer.getFontHeight();
   x = increment % xMax; if ((increment / xMax) & 1) x = xMax - x;
   y = increment % yMax; if ((increment / yMax) & 1) y = yMax - y;
@@ -39,10 +39,10 @@ void loop() {
   Wireling.selectPort(displayPort);
   screenBuffer.clear();
   screenBuffer.setCursor(x, y);
-  screenBuffer.print("Text Test!");
-  Wire.setClock(1000000);
+  screenBuffer.print("0.69 Test!");
+//  Wire.setClock(1000000);
   display.writeBuffer(screenBuffer.getBuffer(), screenBuffer.getBufferSize());
-  Wire.setClock(50000);
+//  Wire.setClock(50000);
 
   increment++;
   delay(10);
