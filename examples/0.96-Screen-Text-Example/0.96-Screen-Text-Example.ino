@@ -38,8 +38,8 @@ void loop() {
   yMax = screenBuffer.height + 8 - screenBuffer.getFontHeight();
   x = increment % xMax; if ((increment / xMax) & 1) x = xMax - x;
   y = increment % yMax; if ((increment / yMax) & 1) y = yMax - y;
-  x -= 20;
-  y -= 8;
+  x -= 10;
+  y -= 4;
 
   Wireling.selectPort(displayPort);
   screenBuffer.clear();

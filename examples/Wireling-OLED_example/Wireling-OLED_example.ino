@@ -1,13 +1,13 @@
 /************************************************************************
    OLED Wireling Screen Example Program
-   This program uses four of the Wirelings included with the Starter Kit:
+   This program uses all three of the Wireling OLEDs:
    Port 0: 0.42" OLED Screen Wireling
    Port 1: 0.69" OLED Screen Wireling
    Port 2: 0.96" OLED Screen Wireling
    Port 3: None
 
-   This program prints the configured screen type to each screen. This
-   text then floats around the screen bouncing off the sides of the screen.
+   This program prints the screen size to each screen. This text then 
+   floats around the screen bouncing off the sides of the screen.
 
    Hardware by: TinyCircuits
    Written by: Hunter Hykes for TinyCircuits
@@ -18,8 +18,8 @@
 
 #include <Wire.h>           // For I2C communication with sensor
 #include <Wireling.h>       // For Wireling interfacing
-#include <TinierScreen.h>   // For interfacing with the 0.42" OLED
-#include <GraphicsBuffer.h> // For building a screen buffer for the 0.42" OLED
+#include <TinierScreen.h>   
+#include <GraphicsBuffer.h> // For building a screen buffer 
 
 // Make compatible with all TinyCircuits processors
 #if defined(ARDUINO_ARCH_AVR)
@@ -29,26 +29,26 @@
 #endif
 
 /* * * * * * * * * * 0.42" OLED * * * * * * * * * */
-#define OLED_042_PORT 0 // use Port 0 for screen
-#define OLED_042_RESET (int) A0 // use Port 0 reset pin
-#define OLED_042_WIDTH 72
-#define OLED_042_HEIGHT 40
+int OLED_042_PORT = 0;
+int OLED_042_RESET = A0; // use Port 0 reset pin
+int OLED_042_WIDTH = 72;
+int OLED_042_HEIGHT = 40;
 TinierScreen display042 = TinierScreen(TinierScreen042);
 GraphicsBuffer screenBuffer042 = GraphicsBuffer(OLED_042_WIDTH, OLED_042_HEIGHT, colorDepth1BPP);
 
 /* * * * * * * * * * 0.69" OLED * * * * * * * * * */
-#define OLED_069_PORT 1 // use Port 1 for screen
-#define OLED_069_RESET (int) A1 // use Port 1 reset pin
-#define OLED_069_WIDTH 96
-#define OLED_069_HEIGHT 16
+int OLED_069_PORT = 1; 
+int OLED_069_RESET = A1;
+int OLED_069_WIDTH = 96;
+int OLED_069_HEIGHT = 16;
 TinierScreen display069 = TinierScreen(TinierScreen069);
 GraphicsBuffer screenBuffer069 = GraphicsBuffer(OLED_069_WIDTH, OLED_069_HEIGHT, colorDepth1BPP);
 
 /* * * * * * * * * * 0.96" OLED * * * * * * * * * */
-#define OLED_096_PORT 2 // use Port 2 for screen
-#define OLED_096_RESET (int) A2 // use Port 2 reset pin
-#define OLED_096_WIDTH 128
-#define OLED_096_HEIGHT 64
+int OLED_096_PORT = 2; 
+int OLED_096_RESET = A2; 
+int OLED_096_WIDTH = 128;
+int OLED_096_HEIGHT = 64;
 TinierScreen display096 = TinierScreen(TinierScreen096);
 GraphicsBuffer screenBuffer096 = GraphicsBuffer(OLED_096_WIDTH, OLED_096_HEIGHT, colorDepth1BPP);
 
