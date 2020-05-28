@@ -28,6 +28,7 @@ void setup() {
   }
   
   screenBuffer.setFont(thinPixel7_10ptFontInfo);
+  display.setFlip(true);
 }
 
 

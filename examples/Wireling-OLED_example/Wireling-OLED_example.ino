@@ -6,7 +6,7 @@
    Port 2: 0.96" OLED Screen Wireling
    Port 3: None
 
-   This program prints the screen size to each screen. This text then 
+   This program prints the screen size to each screen. This text then
    floats around the screen bouncing off the sides of the screen.
 
    Hardware by: TinyCircuits
@@ -18,7 +18,7 @@
 
 #include <Wire.h>           // For I2C communication with sensor
 #include <Wireling.h>       // For Wireling interfacing
-#include <TinierScreen.h>   
+#include <TinierScreen.h>
 #include <GraphicsBuffer.h> // For building a screen buffer 
 
 // Make compatible with all TinyCircuits processors
@@ -37,7 +37,7 @@ TinierScreen display042 = TinierScreen(TinierScreen042);
 GraphicsBuffer screenBuffer042 = GraphicsBuffer(OLED_042_WIDTH, OLED_042_HEIGHT, colorDepth1BPP);
 
 /* * * * * * * * * * 0.69" OLED * * * * * * * * * */
-int OLED_069_PORT = 1; 
+int OLED_069_PORT = 1;
 int OLED_069_RESET = A1;
 int OLED_069_WIDTH = 96;
 int OLED_069_HEIGHT = 16;
@@ -45,8 +45,8 @@ TinierScreen display069 = TinierScreen(TinierScreen069);
 GraphicsBuffer screenBuffer069 = GraphicsBuffer(OLED_069_WIDTH, OLED_069_HEIGHT, colorDepth1BPP);
 
 /* * * * * * * * * * 0.96" OLED * * * * * * * * * */
-int OLED_096_PORT = 2; 
-int OLED_096_RESET = A2; 
+int OLED_096_PORT = 2;
+int OLED_096_RESET = A2;
 int OLED_096_WIDTH = 128;
 int OLED_096_HEIGHT = 64;
 TinierScreen display096 = TinierScreen(TinierScreen096);
@@ -75,8 +75,9 @@ void setup() {
 
   /* * * * * * * * * 0.96" Screen Stuff * * * * * * * */
   Wireling.selectPort(OLED_096_PORT);
-  display096.begin(OLED_096_RESET);
+  display096.begin();
   if (screenBuffer096.begin()) {
+    Serial.println("error");
     //memory allocation error- buffer too big!
   }
   screenBuffer096.setFont(thinPixel7_10ptFontInfo);
@@ -127,7 +128,7 @@ void floatText(int port, TinierScreen screen, GraphicsBuffer &buffer, char *text
   buffer.clear();             // clear the graphics buffer
   buffer.setCursor(x, y);     // set the cursor in the buffer to write text
   buffer.print(text);   // the text to be printed
-  Wire.setClock(1000000);
+  Wire.setClock(500000);
   screen.writeBuffer(buffer.getBuffer(), buffer.getBufferSize()); // write buffer to the screen
-  Wire.setClock(50000);
+  Wire.setClock(500000);
 }

@@ -4,15 +4,15 @@
 #include <TinierScreen.h>
 #include <GraphicsBuffer.h>
 
-//TinierScreen display = TinierScreen(TinierScreen042);
-TinierScreen display = TinierScreen(TinierScreen069);
+TinierScreen display = TinierScreen(TinierScreen042);
+//TinierScreen display = TinierScreen(TinierScreen069);
 //TinierScreen display = TinierScreen(TinierScreen096);
 
-//GraphicsBuffer screenBuffer = GraphicsBuffer(72, 40, colorDepth1BPP);
-GraphicsBuffer screenBuffer = GraphicsBuffer(96, 16, colorDepth1BPP);
+GraphicsBuffer screenBuffer = GraphicsBuffer(72, 40, colorDepth1BPP);
+//GraphicsBuffer screenBuffer = GraphicsBuffer(96, 16, colorDepth1BPP);
 //GraphicsBuffer screenBuffer = GraphicsBuffer(128, 64, colorDepth1BPP);
 
-int displayPort = 3;
+int displayPort = 0;
 int resetPin = A0+displayPort;
 
 void setup() {
@@ -34,7 +34,7 @@ void setup() {
 int increment = 0;
 int xMax, yMax, x, y;
 void loop() {
-  xMax = screenBuffer.width + 20 - screenBuffer.getPrintWidth("KEEP WASHING!");
+  xMax = screenBuffer.width + 20 - screenBuffer.getPrintWidth("Text Test!");
   yMax = screenBuffer.height + 8 - screenBuffer.getFontHeight();
   x = increment % xMax; if ((increment / xMax) & 1) x = xMax - x;
   y = increment % yMax; if ((increment / yMax) & 1) y = yMax - y;
@@ -44,10 +44,10 @@ void loop() {
   Wireling.selectPort(displayPort);
   screenBuffer.clear();
   screenBuffer.setCursor(x, y);
-  screenBuffer.print("KEEP WASHING!");
-  Wire.setClock(1000000);
+  screenBuffer.print("Text Test!");
+  Wire.setClock(500000);
   display.writeBuffer(screenBuffer.getBuffer(), screenBuffer.getBufferSize());
-  Wire.setClock(50000);
+  Wire.setClock(500000);
 
   increment++;
   delay(10);
